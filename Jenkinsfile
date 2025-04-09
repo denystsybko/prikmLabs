@@ -3,7 +3,7 @@ properties([
         webhooks([
             webhook([
                 name('Teams-O365'),
-                url('https://lpnu.webhook.office.com/webhookb2/a91151cd-dd3b-4dd9-b309-00238eab8f53@7631cd62-5187-4e15-8b8e-ef653e366e7a/JenkinsCI/c9ba9dad5b07488e8d6468300698608b/294e4ebb-5ec1-414e-8bf6-c622514c87e0/V2_bXmLLapfaZFy4Ots1OH_gqcOvPKi8Wtfn2UcMLT5001'),
+                url('https://lpnu.webhook.office.com/webhookb2/a91151cd-dd3b-4dd9-b309-00238eab8f53@7631cd62-5187-4e15-8b8e-ef653e366e7a/JenkinsCI/c9ba9dad5b07488e8d6468300698608b/294e4ebb-5ec1-414e-8bf6-c622514c87e0/V2_bXmLLapfaZFy4Ots1OH_gqcOvPKi8Wtfn2UcMLT5001'), // 👈 встав свій Teams Webhook URL
                 startNotification(false),
                 notifySuccess(true),
                 notifyAborted(false),
@@ -24,32 +24,29 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo '🔨 Building the lab project...'
-                sh 'echo "Build step completed."'
+                echo '🔨 Building...'
             }
         }
 
         stage('Test') {
             steps {
-                echo '🧪 Running lab tests...'
-                sh 'echo "Tests completed."'
+                echo '🧪 Testing...'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo '🚀 Deploying lab work...'
-                sh 'echo "Deployment completed."'
+                echo '🚀 Deploying...'
             }
         }
     }
 
     post {
         success {
-            echo '✅ Lab pipeline finished successfully!'
+            echo '✅ Success!'
         }
         failure {
-            echo '❌ Lab pipeline failed.'
+            echo '❌ Failed.'
         }
     }
 }
